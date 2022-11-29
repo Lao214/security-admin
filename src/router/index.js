@@ -23,7 +23,7 @@ import Layout from '@/layout'
     breadcrumb: false            if set false, the item will hidden in breadcrumb(default is true)
     activeMenu: '/example/list'  if set path, the sidebar will highlight the path you set
   }
- */
+*/
 
 /**
  * constantRoutes
@@ -73,6 +73,19 @@ export const constantRoutes = [
         name: 'SysUser',
         component: () => import('@/views/system/sysUser/list'),
         meta: { title: '用户管理', icon: 'tree' }
+      },
+      {
+        path: 'sysMenu',
+        name: 'SysMenu',
+        component: () => import('@/views/system/sysMenu/list'),
+        meta: { title: '菜单管理', icon: 'tree' }
+      },
+      {
+        path: 'assignAuth',
+        name: 'AssignAuth',
+        component: () => import('@/views/system/sysRole/assignAuth'),
+        meta: { title: '角色授权', icon: 'tree' },
+        hidden: true,
       }
     ]
   },

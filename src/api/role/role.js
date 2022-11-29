@@ -1,7 +1,7 @@
 import request from '@/utils/request'
 
 // 常量
-const api_name = '/system/sysRole/'
+const api_name = '/system/sysRole'
 
 export default {
   // 列表
@@ -19,12 +19,11 @@ export default {
     return request({
       // 接口路径
       url: `${api_name}/romove/${id}`,
-      method: 'delete', // 提交方式
-      // 参数
+      method: 'delete'
     })
   },
-   // 角色的添加 功能
-   addRole(role) {
+  // 角色的添加 功能
+  addRole(role) {
     return request({
       // 接口路径
       url: `${api_name}/save`,
@@ -35,12 +34,12 @@ export default {
   },
   // 根据ID找到角色 功能
   getRoleById(id) {
-   return request({
-     // 接口路径
-     url: `${api_name}/findRoleById/${id}`,
-     method: 'post' // 提交方式
-   })
- },
+    return request({
+      // 接口路径
+      url: `${api_name}/findRoleById/${id}`,
+      method: 'post' // 提交方式
+    })
+  },
   // 角色的添加 功能
   updateRole(role) {
     return request({
@@ -60,6 +59,18 @@ export default {
       // 参数
       data: idList
     })
+  },
+  getRolesByUserId(userId) {
+    return request({
+      url: `${api_name}/toAssign/${userId}`,
+      method: 'get'
+    })
+  },
+  assignRoles(assginRoleVo) {
+    return request({
+      url: `${api_name}/doAssign`,
+      method: 'post',
+      data: assginRoleVo
+    })
   }
-  
 }
