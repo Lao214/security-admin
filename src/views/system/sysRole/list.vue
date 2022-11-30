@@ -19,7 +19,7 @@
     </div>
     <!-- 工具条 -->
     <div class="tools-div">
-      <el-button type="success" :disabled="$hasBP(btn.sysRole.add) === false" icon="el-icon-plus" size="mini" @click="add">添 加</el-button>
+      <el-button type="success" icon="el-icon-plus" size="mini" @click="add">添 加</el-button>
       <el-button class="btn-add" size="mini" @click="batchRemove()" >批量删除</el-button>
     </div>
     <!-- 表格 -->
@@ -211,7 +211,7 @@ export default {
           // 放到数组里面
           idList.push(id)
         }
-        roleApi.batchRemove(idList).then(response => {
+        roleApi.batchRemoveRole(idList).then(response => {
           // 提示
           this.$message({
             type: 'success',

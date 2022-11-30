@@ -52,7 +52,7 @@ export default {
   removeId(id) {
     return request({
      // 接口路径
-     url: `${api_name}/romove/${id}`,
+     url: `${api_name}/remove/${id}`,
      method: 'delete' // 提交方式
    })
   },

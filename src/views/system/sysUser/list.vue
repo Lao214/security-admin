@@ -31,8 +31,8 @@
 
     <!-- 工具条 -->
     <div class="tools-div">
-      <!-- <el-button type="success" :disabled="$hasBP('bnt.sysUser.add')  === false" icon="el-icon-plus" size="mini" @click="add">添 加</el-button> -->
-      <el-button type="success" icon="el-icon-plus" size="mini" @click="add">添 加</el-button>
+      <el-button type="success" :disabled="$hasBP('bnt.sysUser.add')  === false" icon="el-icon-plus" size="mini" @click="add">添 加</el-button>
+      <!-- <el-button type="success" icon="el-icon-plus" size="mini" @click="add">添 加</el-button> -->
     </div>
     <!-- 列表 -->
     <el-table v-loading="listLoading" :data="list" stripe border style="width: 100%;margin-top: 10px;">
@@ -207,7 +207,7 @@ export default {
         type: 'warning'
       }).then(() => {
         // 调用方法删除
-        api.removeById(id).then(response => {
+        api.removeId(id).then(response => {
           // 提示
           this.$message({
             type: 'success',
@@ -250,7 +250,7 @@ export default {
     },
     // 添加
     save() {
-      api.save(this.sysUser)
+      api.addUser(this.sysUser)
         .then(response => {
           // 提示
           this.$message.success('操作成功')
